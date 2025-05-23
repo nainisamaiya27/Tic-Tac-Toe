@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Player Name Input Modal -->
+    <div id="name-modal" class="modal">
+      <div class="modal-content">
+        <h2>Enter Player Names</h2>
+        <input type="text" id="playerO-name" placeholder="Player O name" />
+        <input type="text" id="playerX-name" placeholder="Player X name" />
+        <button id="start-game-btn">Start Game</button>
+      </div>
+    </div>
+
+    <!-- Background repeated tilted text -->
+    <div class="background-text">
+      <!-- Multiple spans for repeated text -->
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <span>Tic Tac Toe</span>
+      <!-- add more spans if needed -->
+    </div>
+
+    <!-- Message Container -->
+    <div class="msg-container hide">
+      <p id="msg">Winner</p>
+      <button id="new-btn">New Game</button>
+    </div>
+
+    <!-- Replace existing toggle button HTML with this -->
+<button id="themeToggle">Dark Theme🌙</button>
+
+    <main>
+      
+
+      <!-- Turn info -->
+      <div id="turn-info">Player O's Turn</div>
+
+      <!-- Scoreboard -->
+      <div id="scoreboard">
+        <span id="scoreO">O: 0</span> | <span id="scoreX">X: 0</span>
+      </div>
+
+      <div class="container">
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+      </div>
+      <button id="reset-btn">Reset Game</button>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>

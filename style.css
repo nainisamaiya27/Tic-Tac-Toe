@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  background-color: #eebbd9;
+  text-align: center;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  font-size: 8vmin;
+
+  background-color: #f0e1ec;
+}
+
+#reset-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #7a2670f0;
+  color: #e0d4d4;
+  border-radius: 1rem;
+  border: none;
+}
+
+#new-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #973889;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+}
+
+#msg {
+  color: #63044e;
+  font-size: 10vmin;
+}
+
+.msg-container {
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.hide {
+  display: none;
+}
+/* Background repeated tilted text styling */
+
+.background-text {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr)); /* Thoda bada gap ke liye */
+  grid-auto-rows: 10vh;  /* Thoda zyada height */
+  gap: 3rem 5rem;        /* Zyada gap horizontal aur vertical dono me */
+  pointer-events: none;
+  user-select: none;
+  z-index: 8;
+  opacity: 0.08;
+  color: rgb(27, 4, 39);
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+.background-text span {
+  white-space: nowrap;
+  transform: rotate(-30deg);  /* Sabko -30deg tilt */
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+.bounce {
+  animation: bounce 0.4s ease;
+}
+/* Modal style */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #eba7e5a5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #90598b;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.modal-content input {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  width: 200px;
+  border-radius: 0.5rem;
+  border: 1px solid #1e1d1d;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #45193e;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Scoreboard */
+#scoreboard {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  color: #933a8e;
+  
+}
+
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 10px;
+  border-top: 3px solid #47083e;
+  border-bottom: 3px solid #560e4b;
+  border-left: 3px solid #560e4b;
+  border-right: 3px solid #560e4b;
+background-color: #973889;
+color: #f6f2f2;
+font-weight: bolder;
+}
+
+
+
+/* :root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --bg-text-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --bg-text-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-text::before {
+  content: "Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe ";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 300%;
+  height: 300%;
+  font-size: 60px;
+  color: var(--bg-text-color);
+  white-space: pre-wrap;
+  z-index: -1;
+  transform: rotate(-30deg);
+  line-height: 100px;
+  pointer-events: none;
+} */
+
+/* 🌙 Dark Mode Overrides */
+body.dark {
+  background-color: #201313;
+}
+
+/* Game Boxes */
+body.dark .box {
+  background-color: #9e9999;
+  color: #100303;
+}
+
+/* Buttons */
+body.dark #reset-btn,
+body.dark #new-btn,
+body.dark .modal-content button {
+  background-color: #918d8b;
+  color: #e1dada;
+   font-weight:bold ;
+}
+
+/* Modal */
+body.dark .modal-content {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+/* Scoreboard & Messages */
+body.dark #scoreboard,
+body.dark #msg {
+  color: #e8e6e3;
+}
+
+/* Repeated background text color */
+body.dark .background-text {
+  color: rgba(237, 241, 241, 0.25);
+}
+
+/* Toggle button */
+body.dark #themeToggle {
+  background-color: #8b8787;
+  color: #ffffff;
+  border-color: #0d0101;
+
+}
+
+.background-text span {
+  transform: rotate(-30deg);
+  white-space: normal; /* Allow text to wrap */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.x {
+  color: #960655; /* red for X */
+}
+
+.o {
+  color: #2a0743; /* blue for O */
+}
